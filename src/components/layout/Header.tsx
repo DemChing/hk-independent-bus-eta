@@ -138,6 +138,11 @@ const Header = () => {
           }
           navigate(`/${i18n.language}/board`, { replace: true });
         }}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.stopPropagation();
+          }
+        }}
       />
       <Box sx={funcPanelSx}>
         {weatherCodes.slice(0, 2).map((code) => (
